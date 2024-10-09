@@ -1,0 +1,30 @@
+server:
+  port: 7002
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    operations-sorter: method
+
+spring:
+  datasource:
+    url: jdbc:h2:./test
+    username: sa
+    password: 1234
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        #show_sql: true
+        format_sql: true
+        use_sql_comments: true
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true

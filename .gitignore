@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+##front ##
+/client/.next/
+/client/node_modules/

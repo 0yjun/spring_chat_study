@@ -11,7 +11,7 @@ import org.springframework.web.socket.config.annotation.*;
 
 @RequiredArgsConstructor
 @Configuration
-@EnableWebSocket //WebSocket 활성화
+@EnableWebSocketMessageBroker
 public class WssConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override

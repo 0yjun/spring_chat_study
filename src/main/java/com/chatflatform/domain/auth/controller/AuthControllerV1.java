@@ -44,7 +44,7 @@ public class AuthControllerV1 {
             summary = "get user name",
             description = "토큰으로 user 조회"
     )
-    @GetMapping("/get-user-name/{token}")
+    @GetMapping("/verify-token/{token}")
     public String createUser(
             @PathVariable("token") String token
     ){

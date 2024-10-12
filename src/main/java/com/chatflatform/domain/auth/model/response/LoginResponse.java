@@ -12,7 +12,7 @@ public record LoginResponse(
         ErrorCode description,
 
         @Schema(description = "jwt token")
-        String toekn
+        String token
 //        @Schema(description = "성공 유무 작성 코드")
 //        @NotBlank
 //        @NotNull

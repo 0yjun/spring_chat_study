@@ -1,5 +1,6 @@
 package com.chatflatform.domain.auth.repository.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +23,7 @@ public class User {
     private Timestamp created_at;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private UserCredentials userCredentials;
 
     public void setCredentials(UserCredentials credentials){

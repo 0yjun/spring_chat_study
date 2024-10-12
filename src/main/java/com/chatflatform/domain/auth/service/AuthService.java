@@ -80,7 +80,8 @@ public class AuthService {
 
         }catch (Exception e){
             log.error("USER_SAVED_FAIL: {}", request.name());
-            throw new CustomException(ErrorCode.USER_SAVED_FAIL);
+            e.printStackTrace();
+            throw new CustomException(ErrorCode.USER_SAVED_FAIL, e.getMessage());
         }
 
         return new CreateUserResponse(request.name());

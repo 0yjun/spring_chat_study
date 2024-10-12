@@ -1,9 +1,11 @@
 package com.chatflatform.config;
 
+import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -40,5 +42,12 @@ public class MYSQLConfig {
     public PlatformTransactionManager createUserTransactionManager(DataSource dataSource){
         DataSourceTransactionManager manager = new DataSourceTransactionManager(dataSource);
         return manager;
+    }
+
+    @Bean(name="createChatTransactionManager")
+    public PlatformTransactionManager createPlatformTransactionManager(EntityManagerFactory emf){
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(emf);
+        return transactionManager;
     }
 }

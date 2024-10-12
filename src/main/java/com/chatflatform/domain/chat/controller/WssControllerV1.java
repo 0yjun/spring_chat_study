@@ -23,7 +23,6 @@ public class WssControllerV1 {
             Message msg
     ){
         log.info("Message Ressived {}", from);
-        //TODO-> save
         chatServiceV1.saveChatMessage(msg);
         return msg;
     }

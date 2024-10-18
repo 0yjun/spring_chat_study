@@ -1,14 +1,13 @@
-server:
-  port: 8081
-
-springdoc:
-  swagger-ui:
-    enabled: true
-    operations-sorter: method
-
 spring:
-  profiles:
-    active: mysql
+  spring:
+    config:
+      activate:
+        on-profile: mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/security_jwt
+    username: security_jwt
+    password: security_jwt
+    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -30,8 +29,3 @@ decorator:
   datasource:
     p6spy:
       enable-logging: true
-token:
-  secret-key: "SECRET"
-  refresh-secret-key: "REFRESH_SECRET"
-  token-time: 300
-  refresh-token-time: 300
